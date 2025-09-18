@@ -5,43 +5,265 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de Confidentialité - WordFarmer</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      line-height: 1.6;
-      max-width: 800px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
     }
-    h1, h2 {
-      color: #2c3e50;
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
     }
+
+    .header {
+      background: linear-gradient(45deg, #4CAF50, #66BB6A);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header .subtitle {
+      font-size: 1.1em;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      padding: 40px 30px;
+    }
+
+    .last-updated {
+      background: linear-gradient(45deg, #f8f9ff, #e8f2ff);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      border-left: 4px solid #667eea;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .section {
+      margin-bottom: 35px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.2em;
+    }
+
+    .section h2 {
+      color: #2d3748;
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+
+    .section p {
+      color: #4a5568;
+      line-height: 1.7;
+      font-size: 1em;
+    }
+
+    .contact-info {
+      background: linear-gradient(45deg, #4CAF50, #66BB6A);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
+      .header {
+        padding: 30px 20px;
+      }
+      
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .content {
+        padding: 30px 20px;
+      }
+      
+      .section {
+        padding: 20px;
+      }
+    }
+
+    .icon-data { background: linear-gradient(45deg, #3b82f6, #60a5fa); }
+    .icon-usage { background: linear-gradient(45deg, #10b981, #34d399); }
+    .icon-share { background: linear-gradient(45deg, #f59e0b, #fbbf24); }
+    .icon-ads { background: linear-gradient(45deg, #ef4444, #f87171); }
+    .icon-security { background: linear-gradient(45deg, #8b5cf6, #a78bfa); }
+    .icon-children { background: linear-gradient(45deg, #ec4899, #f472b6); }
+    .icon-rights { background: linear-gradient(45deg, #06b6d4, #67e8f9); }
+    .icon-updates { background: linear-gradient(45deg, #84cc16, #a3e635); }
   </style>
 </head>
 <body>
-  <h1>Politique de Confidentialité - WordFarmer</h1>
-  <p><strong>Dernière mise à jour :</strong> Septembre 2025</p>
+  <div class="container">
+    <div class="header">
+      <h1>🌱 WordFarmer</h1>
+      <div class="subtitle">Politique de Confidentialité</div>
+    </div>
 
-  <h2>1. Données collectées</h2>
-  <p>Le jeu WordFarmer ne collecte pas de données personnelles sensibles. Des données anonymes peuvent être recueillies automatiquement via Google Play Services (type d’appareil, version du système, performance du jeu). Si vous vous connectez avec Google/Facebook, seules les informations nécessaires à l’authentification sont utilisées.</p>
+    <div class="content">
+      <div class="last-updated">
+        📅 <strong>Dernière mise à jour :</strong> Septembre 2025
+      </div>
 
-  <h2>2. Utilisation des données</h2>
-  <p>Les données collectées servent uniquement à améliorer l’expérience de jeu (statistiques, correction des bugs, progression). Nous n’utilisons pas vos informations à des fins commerciales en dehors des services intégrés (AdMob).</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-data">📊</div>
+          <h2>Données collectées</h2>
+        </div>
+        <p>Le jeu WordFarmer ne collecte pas de données personnelles sensibles. Des données anonymes peuvent être recueillies automatiquement via Google Play Services (type d'appareil, version du système, performance du jeu). Si vous vous connectez avec Google/Facebook, seules les informations nécessaires à l'authentification sont utilisées.</p>
+      </div>
 
-  <h2>3. Partage des données</h2>
-  <p>Vos données ne sont jamais revendues. Elles peuvent être transmises uniquement à des services tiers nécessaires au fonctionnement du jeu (Google Play Services, AdMob, Firebase).</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-usage">🎯</div>
+          <h2>Utilisation des données</h2>
+        </div>
+        <p>Les données collectées servent uniquement à améliorer l'expérience de jeu (statistiques, correction des bugs, progression). Nous n'utilisons pas vos informations à des fins commerciales en dehors des services intégrés (AdMob).</p>
+      </div>
 
-  <h2>4. Publicités</h2>
-  <p>Le jeu peut afficher des publicités via Google AdMob. Ces publicités utilisent des identifiants anonymes pour proposer du contenu pertinent.</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-share">🤝</div>
+          <h2>Partage des données</h2>
+        </div>
+        <p>Vos données ne sont jamais revendues. Elles peuvent être transmises uniquement à des services tiers nécessaires au fonctionnement du jeu (Google Play Services, AdMob, Firebase).</p>
+      </div>
 
-  <h2>5. Sécurité</h2>
-  <p>Nous mettons en œuvre des mesures raisonnables pour protéger vos informations, bien qu’aucun système ne soit totalement sûr.</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-ads">📺</div>
+          <h2>Publicités</h2>
+        </div>
+        <p>Le jeu peut afficher des publicités via Google AdMob. Ces publicités utilisent des identifiants anonymes pour proposer du contenu pertinent.</p>
+      </div>
 
-  <h2>6. Enfants</h2>
-  <p>Le jeu est conçu pour un public familial. Si vous avez moins de 13 ans, utilisez l’application avec l’accord d’un parent ou tuteur.</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-security">🔒</div>
+          <h2>Sécurité</h2>
+        </div>
+        <p>Nous mettons en œuvre des mesures raisonnables pour protéger vos informations, bien qu'aucun système ne soit totalement sûr.</p>
+      </div>
 
-  <h2>7. Vos droits</h2>
-  <p>Vous pouvez demander la suppression de vos données en nous contactant à : <a href="mailto:tonemail@example.com">tonemail@example.com</a></p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-children">👨‍👩‍👧‍👦</div>
+          <h2>Enfants</h2>
+        </div>
+        <p>Le jeu est conçu pour un public familial. Si vous avez moins de 13 ans, utilisez l'application avec l'accord d'un parent ou tuteur.</p>
+      </div>
 
-  <h2>8. Modifications</h2>
-  <p>Nous pouvons mettre à jour cette politique. Toute modification sera publiée ici.</p>
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-rights">⚖️</div>
+          <h2>Vos droits</h2>
+        </div>
+        <p>Vous pouvez demander la suppression de vos données en nous contactant. Nous nous engageons à répondre dans les meilleurs délais.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon icon-updates">🔄</div>
+          <h2>Modifications</h2>
+        </div>
+        <p>Nous pouvons mettre à jour cette politique. Toute modification sera publiée ici avec une nouvelle date de mise à jour.</p>
+      </div>
+
+      <div class="contact-info">
+        <h3>📧 Nous contacter</h3>
+        <p>Pour toute question concernant cette politique de confidentialité :</p>
+        <a href="mailto:word.farmer.contact@gmail.com">word.farmer.contact@gmail.com</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
