@@ -13,4 +13,4 @@ Vous pouvez consulter la politique de confidentialité en ligne à cette adresse
 
 ## 📬 Contact
 Pour toute question ou demande de suppression de données :  
-✉️ [tonemail@example.com](mailto:tonemail@example.com)
+✉️ [wordfarmer.contact@gmail.com](mailto:word.farmer.contact@gmail.com)
